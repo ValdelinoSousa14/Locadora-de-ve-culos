@@ -1,3 +1,4 @@
+Controller\ContratoAluguelController.class
 Model\TipoVeiculo.class
 Model\Cliente.class
 DAO\ConexaoDAO.class
@@ -5,8 +6,11 @@ DAO\ExceptionDAO.class
 Model\Onibus.class
 view\JanelaPrincipal.class
 view\JanelaPrincipal$2.class
+view\JanelaAlugar$2.class
 Model\Automovel.class
 view\JanelaAlugar$1.class
+view\JanelaAlugar$3.class
+DAO\ContratoDAO.class
 Controller\ClienteController.class
 Model\Escritorio.class
 view\JCadastroCliente$1.class

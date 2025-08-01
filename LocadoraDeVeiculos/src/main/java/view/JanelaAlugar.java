@@ -5,6 +5,9 @@
 package view;
 
 import Controller.ContratoAluguelController;
+import DAO.ExceptionDAO;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -70,9 +73,12 @@ public class JanelaAlugar extends javax.swing.JInternalFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Dia:");
 
+        txtDia.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Mês:");
 
+        cbMes.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         cbMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez" }));
         cbMes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,7 +142,7 @@ public class JanelaAlugar extends javax.swing.JInternalFrame {
                     .addComponent(cbMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(txtDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addComponent(btnAlugar)
                 .addGap(27, 27, 27))
         );
@@ -149,11 +155,12 @@ public class JanelaAlugar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtNumeroActionPerformed
 
     private void btnAlugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlugarActionPerformed
-        int numero = Integer.parseInt(txtNumero.getText());
+        String cnh = txtNumero.getText();
         String tipo = cbTipo.getName();
         int dia = Integer.parseInt(txtDia.getText());
         String mes = cbMes.getName();
-        int mesN;
+
+        int mesN = 0;
         
         switch(mes){
             case "jan":
@@ -194,7 +201,11 @@ public class JanelaAlugar extends javax.swing.JInternalFrame {
                 break;
         }
         
-        new ContratoAluguelController().criarContrato(numero, tipo, dia, mesN);
+        try {
+            new ContratoAluguelController().criarContrato(cnh, tipo, dia, mesN);
+        } catch (ExceptionDAO ex) {
+            Logger.getLogger("Erro na conexão"+ ex);
+        }
     }//GEN-LAST:event_btnAlugarActionPerformed
 
     private void cbMesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbMesActionPerformed
