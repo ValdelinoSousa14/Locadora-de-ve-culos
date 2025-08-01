@@ -4,13 +4,13 @@ import java.util.Date;
 
 public class ContratoAluguel {
     private Date data;
-    private int duracao;
+    private Date dataFinal;
     private Cliente cliente;
     private TipoVeiculo TV;
 
-    public ContratoAluguel(Date data, int duracao, Cliente cliente, TipoVeiculo TV) {
+    public ContratoAluguel(Date data, Date duracao, Cliente cliente, TipoVeiculo TV) {
         this.data = data;
-        this.duracao = duracao;
+        this.dataFinal = duracao;
         this.cliente = cliente;
         this.TV = TV;
     }
@@ -19,8 +19,8 @@ public class ContratoAluguel {
         return data;
     }
 
-    public int getDuracao() {
-        return duracao;
+    public Date getDuracao() {
+        return dataFinal;
     }
 
     public Cliente getCliente() {

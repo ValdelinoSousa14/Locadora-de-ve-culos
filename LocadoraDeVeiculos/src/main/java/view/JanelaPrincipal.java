@@ -31,6 +31,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         PP = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        miAlugar = new javax.swing.JMenuItem();
         MICadastroCliente = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
@@ -48,6 +49,14 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         );
 
         jMenu1.setText("File");
+
+        miAlugar.setText("Alugar");
+        miAlugar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miAlugarActionPerformed(evt);
+            }
+        });
+        jMenu1.add(miAlugar);
 
         MICadastroCliente.setText(" Cadastrar cliente");
         MICadastroCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -88,6 +97,12 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         c.setVisible(true);
     }//GEN-LAST:event_MICadastroClienteActionPerformed
 
+    private void miAlugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAlugarActionPerformed
+        JanelaAlugar ja = new JanelaAlugar();
+        PP.add(ja);
+        ja.setVisible(true);
+    }//GEN-LAST:event_miAlugarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -119,5 +134,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem miAlugar;
     // End of variables declaration//GEN-END:variables
 }

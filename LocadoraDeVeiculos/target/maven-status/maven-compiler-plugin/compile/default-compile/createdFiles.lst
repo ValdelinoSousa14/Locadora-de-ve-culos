@@ -4,11 +4,13 @@ DAO\ConexaoDAO.class
 DAO\ExceptionDAO.class
 Model\Onibus.class
 view\JanelaPrincipal.class
+view\JanelaPrincipal$2.class
 Model\Automovel.class
-com\mycompany\locadoradeveiculos\LocadoraDeVeiculos.class
+view\JanelaAlugar$1.class
 Controller\ClienteController.class
 Model\Escritorio.class
 view\JCadastroCliente$1.class
+view\JanelaAlugar.class
 DAO\ClienteDAO.class
 view\JanelaPrincipal$1.class
 Model\ContratoAluguel.class
